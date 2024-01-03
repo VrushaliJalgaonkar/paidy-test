@@ -1,10 +1,15 @@
 package forex.domain
 
 import cats.Show
+import enumeratum.{ CirceEnum, Enum, EnumEntry }
 
-sealed trait Currency
+trait Uppercase extends EnumEntry {
+  override def entryName: String = super.entryName.toUpperCase
+}
 
-object Currency {
+sealed trait Currency extends Uppercase
+
+object Currency extends Enum[Currency] with CirceEnum[Currency] {
   case object AUD extends Currency
   case object CAD extends Currency
   case object CHF extends Currency
@@ -15,28 +20,17 @@ object Currency {
   case object SGD extends Currency
   case object USD extends Currency
 
-  implicit val show: Show[Currency] = Show.show {
-    case AUD => "AUD"
-    case CAD => "CAD"
-    case CHF => "CHF"
-    case EUR => "EUR"
-    case GBP => "GBP"
-    case NZD => "NZD"
-    case JPY => "JPY"
-    case SGD => "SGD"
-    case USD => "USD"
-  }
+  implicit val show: Show[Currency] = Show.fromToString
 
-  def fromString(s: String): Currency = s.toUpperCase match {
-    case "AUD" => AUD
-    case "CAD" => CAD
-    case "CHF" => CHF
-    case "EUR" => EUR
-    case "GBP" => GBP
-    case "NZD" => NZD
-    case "JPY" => JPY
-    case "SGD" => SGD
-    case "USD" => USD
-  }
+  def fromString(s: String): Currency =
+    withNameInsensitive(s)
+
+  val values: IndexedSeq[Currency] = findValues
+
+  val currPairs: List[(Currency, Currency)] =
+  values.toList.combinations(2).flatMap {
+    case List(from, to) => List((from, to), (to, from))
+    case _ => Nil  // Handle other cases, like single element or empty list
+  }.toList
 
 }

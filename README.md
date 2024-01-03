@@ -8,16 +8,18 @@ This repository has solution of Paidy test provided at https://github.com/paidy/
 
 
 ## Implementation details
+- Improved logging by adding highligting to the log messages.
+- To handle 10,000 requests, caching the data solution can be added. 
+- Updated code in Currency.scala file to make a list pair of all currencies and added a trait to handle the currency names to be uppercase letters.
 
 
+## Build and run the code
+> sbt compile  
+> sbt run
 
-
-## How to run the code
-
-
-## How to run tests
-
-
-## What could have been done more
+## Future Improvements
+- Tests can be added
+- Swagger UI can be added, to help other developers to understand the APIs working
+- Logging can be improved. For example, the logs can be preserved in files. When the logs size increses, then it can be moved to a file. This can be done by updating logback.xml file
 
 

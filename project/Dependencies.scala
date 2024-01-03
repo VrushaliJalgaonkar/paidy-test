@@ -8,6 +8,7 @@ object Dependencies {
     val fs2        = "2.5.4"
     val http4s     = "0.22.15"
     val circe      = "0.14.2"
+    val enumeratum = "1.7.1"
     val pureConfig = "0.17.4"
 
     val kindProjector  = "0.13.2"
@@ -33,6 +34,8 @@ object Dependencies {
     lazy val circeGenericExt = circe("circe-generic-extras")
     lazy val circeParser     = circe("circe-parser")
     lazy val pureConfig      = "com.github.pureconfig" %% "pureconfig" % Versions.pureConfig
+    lazy val enumeratum      = "com.beachape" %% "enumeratum" % Versions.enumeratum
+    lazy val enumeratumCirce = "com.beachape" %% "enumeratum-circe" % Versions.enumeratum
 
     // Compiler plugins
     lazy val kindProjector = "org.typelevel" %% "kind-projector" % Versions.kindProjector cross CrossVersion.full

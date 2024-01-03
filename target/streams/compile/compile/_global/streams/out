@@ -1,0 +1,5 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/vrushalijalgaonkar/Desktop/personal-projects-github/paidy-test/src/main/scala/forex/domain/Currency.scala:31:45: match may not be exhaustive.[0m
+[0m[[0m[31merror[0m] [0m[0mIt would fail on the following inputs: List(_), Nil[0m
+[0m[[0m[31merror[0m] [0m[0m    values.toList.combinations(2).flatMap(_.toList match {[0m
+[0m[[0m[31merror[0m] [0m[0m                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
