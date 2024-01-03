@@ -8,14 +8,15 @@ This repository has solution of Paidy test provided at https://github.com/paidy/
 
 
 ## Implementation details
-- Improved logging by adding highligting to the log messages.
-- To handle 10,000 requests, caching the data solution can be added. 
+- To handle 10,000 requests, caching the data solution can be added.
 - Updated code in Currency.scala file to make a list pair of all currencies and added a trait to handle the currency names to be uppercase letters.
+- Improved logging by adding highligting to the log messages.
 
 
 ## Build and run the code
 > sbt compile  
 > sbt run
+
 
 ## Future Improvements
 - Tests can be added
