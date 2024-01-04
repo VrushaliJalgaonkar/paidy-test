@@ -14,8 +14,12 @@ This repository has solution of Paidy test provided at https://github.com/paidy/
 
 
 ## Build and run the code
-> sbt compile  
-> sbt run
+```
+sbt compile
+```
+```
+sbt run
+```
 
 
 ## Future Improvements
